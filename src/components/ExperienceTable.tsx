@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { parseExperience } from '@/utils/parser';
+import { ExperienceEntry } from '@/data/portfolioData';
 
-export default function ExperienceTable({ content }: { content: string }) {
-  const experiences = parseExperience(content);
+export default function ExperienceTable({ content }: { content: ExperienceEntry[] }) {
+  const experiences = content || [];
 
   // Helper to highlight impact metrics (numbers, percentages) in green
   const formatImpact = (text: string) => {

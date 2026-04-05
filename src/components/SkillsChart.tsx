@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { parseSkills } from '@/utils/parser';
+import { SkillEntry } from '@/data/portfolioData';
 
-export default function SkillsChart({ content }: { content: string }) {
-  const categories = parseSkills(content);
+export default function SkillsChart({ content }: { content: SkillEntry[] }) {
+  const categories = content || [];
 
   // Generate a stable "proficiency" level (0-100) based on string hash for visual variety
   const getVolumeLevel = (str: string) => {

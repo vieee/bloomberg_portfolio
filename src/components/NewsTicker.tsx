@@ -1,10 +1,9 @@
 'use client';
 
 import React from 'react';
-import { parseList } from '@/utils/parser';
 
-export default function NewsTicker({ content, type }: { content: string, type: 'ACHV' | 'RES' }) {
-  const items = parseList(content);
+export default function NewsTicker({ content, type }: { content: string[], type: 'ACHV' | 'RES' }) {
+  const items = content || [];
 
   // Generate mock Bloomberg timestamps for realism
   const generateTimestamp = (index: number) => {

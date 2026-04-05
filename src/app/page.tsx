@@ -1,8 +1,8 @@
 import Dashboard from '@/components/Dashboard';
-import { fetchAllData } from '@/utils/dataFetcher';
+import { portfolioData } from '@/data/portfolioData';
 
-export default async function Home() {
-  const data = await fetchAllData();
+export default function Home() {
+  const data = portfolioData;
   
   return (
     <main className="w-screen h-screen">

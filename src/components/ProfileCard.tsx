@@ -1,10 +1,10 @@
 'use client';
 
 import React from 'react';
-import { parseContacts } from '@/utils/parser';
+import { ContactEntry } from '@/data/portfolioData';
 
-export default function ProfileCard({ content }: { content: string }) {
-  const contacts = parseContacts(content);
+export default function ProfileCard({ content }: { content: ContactEntry[] }) {
+  const contacts = content || [];
 
   return (
     <div className="h-full w-full font-mono text-[var(--text-primary)] text-xs flex flex-col p-2">

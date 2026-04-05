@@ -36,9 +36,24 @@ export default function TerminalPanel({ data }: TerminalPanelProps) {
     const matchedKey = keys.find(k => k === trimmed || (k === 'research' && trimmed === 'research_work'));
     
     if (matchedKey && data[matchedKey]) {
-      // Split content into lines and add to logs
-      const lines = data[matchedKey].split('\n');
-      setLogs(prev => [...prev, ...lines]);
+      const targetData = data[matchedKey];
+      // Format the data depending on whether it's an array of strings or objects
+      let newLogs: string[] = [];
+      if (Array.isArray(targetData)) {
+         targetData.forEach((item) => {
+           if (typeof item === 'string') {
+             newLogs.push(item);
+           } else {
+             newLogs.push(JSON.stringify(item, null, 2));
+           }
+         });
+      } else {
+         newLogs.push(JSON.stringify(targetData, null, 2));
+      }
+      
+      // Split by newlines if JSON.stringify created multi-line strings
+      const finalLogs = newLogs.flatMap(log => log.split('\n'));
+      setLogs(prev => [...prev, ...finalLogs, '']);
     } else {
       setLogs(prev => [...prev, `Command not recognized: ${cmd}`]);
     }

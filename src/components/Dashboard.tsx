@@ -18,7 +18,7 @@ type GridState = {
 type PanelId = keyof GridState;
 
 interface DashboardProps {
-  data: Record<string, string>;
+  data: any;
 }
 
 export default function Dashboard({ data }: DashboardProps) {
