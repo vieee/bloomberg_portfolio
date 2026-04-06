@@ -47,7 +47,7 @@ export const experienceData: ExperienceEntry[] = [
     ticker: "JPMC US Equity",
     title: "Quantitative Modeling, Credit Risk & Margining",
     location: "Bengaluru, IN",
-    date: "Aug ’22 – Present",
+    date: "Aug’22 – Present",
     bullets: [
       "Spearheaded the Backtesting framework for Internal Model Method (IMM) and non-standard risk profiles; automated reporting pipelines, reducing the end-to-end process lifecycle by 35%.",
       "Validated and extended model scopes within the Credit Portfolio Group (CPG), performing rigorous independent testing for FX, Commodity Pricing, and large-scale simulation models.",
@@ -59,7 +59,7 @@ export const experienceData: ExperienceEntry[] = [
     ticker: "JPMC US Equity",
     title: "Quantitative Strats, Credit Portfolio",
     location: "Mumbai, IN",
-    date: "Jan ’22 – Jul ’22",
+    date: "Jan’22 – Jul’22",
     bullets: [
       "Developed an automated Review Table generator for Quarterly FnO deals, achieving an 80% reduction in manual processing time. Conducted technical model reviews for Equity Forwards, Futures, and Synthetic Asset Pricing models; performed implementation testing for Commodity Swap Vanilla Pricers.",
       "Resolved a critical bug in MtM comparison scripts by identifying discrepancies in Variance Swap Curve data, explaining a~40% variance in mis-priced deals."
@@ -70,7 +70,7 @@ export const experienceData: ExperienceEntry[] = [
     ticker: "TIS IN Equity",
     title: "Application Programming",
     location: "Mumbai, IN",
-    date: "Oct ’21 - May ’22",
+    date: "Oct’21 - May’22",
     bullets: [
       "Created custom Java Modules to program robots for FIRST Robotics Challenge & FIRST Tech Challenge. Applied vision processing, autonomous Robot Path Planning & Object Detection using TensorFlow & PathWeaver.",
       "Mentored 7 student teams of Dhirubhai Ambani International School and several NGOs across Mumbai for FIRST Robotics Challenge & FIRST Tech Challenge."
@@ -81,7 +81,7 @@ export const experienceData: ExperienceEntry[] = [
     ticker: "TERO SP Equity",
     title: "Junior Web Developer",
     location: "Madrid, SP",
-    date: "Jul '21 - Aug '21",
+    date: "Jul'21 - Aug'21",
     bullets: [
       "Developed innate MongoDB Analytics Mechanism, thereby reducing project dependencies and cutting operations cost by 24%.",
       "Updated Tree Saving Mechanism Component on the website."
@@ -92,7 +92,7 @@ export const experienceData: ExperienceEntry[] = [
     ticker: "ABST IN Equity",
     title: "Frontend Web Developer",
     location: "Mumbai, IN",
-    date: "Dec '20 - Feb '21",
+    date: "Dec'20 - Feb'21",
     bullets: [
       "Developed responsive components on the E-commerce website, improving the page-load speed.",
       "Created Barcode, QR code & wish-list on the website."
@@ -103,7 +103,7 @@ export const experienceData: ExperienceEntry[] = [
     ticker: "RUR IN Equity",
     title: "Technical Support Intern",
     location: "Mumbai, IN",
-    date: "Jul '19 - Feb '20",
+    date: "Jul'19 - Feb'20",
     bullets: [
       "Established a network to transfer feedback data for project to respective team assignees in Excel.",
       "Created a backend which ensures robust storage.",
