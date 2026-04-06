@@ -35,6 +35,12 @@ export interface ContactEntry {
   value: string;
 }
 
+export interface AchievementEntry {
+  title: string;
+  organization: string;
+  date: string;
+}
+
 export const experienceData: ExperienceEntry[] = [
   {
     company: "J.P. Morgan Chase & Co.",
@@ -110,27 +116,27 @@ export const skillsData: SkillEntry[] = [
   {
     category: "Languages & Frameworks",
     skills: [
-      { name: "Python", proficiency: 95 },
-      { name: "Pandas", proficiency: 92 },
-      { name: "Polars", proficiency: 85 },
-      { name: "NumPy", proficiency: 90 },
-      { name: "C++", proficiency: 82 },
-      { name: "C", proficiency: 75 },
-      { name: "Bash", proficiency: 80 },
-      { name: "React", proficiency: 85 },
-      { name: "TypeScript", proficiency: 88 }
+      { name: "Python ", proficiency: 95 },
+      { name: "Pandas ", proficiency: 92 },
+      { name: "Polars ", proficiency: 85 },
+      { name: "NumPy ", proficiency: 90 },
+      { name: "C++ ", proficiency: 82 },
+      { name: "C ", proficiency: 75 },
+      { name: "Bash ", proficiency: 80 },
+      { name: "React ", proficiency: 85 },
+      { name: "TypeScript ", proficiency: 88 }
     ]
   },
   {
     category: "Data, Tools & Dev",
     skills: [
-      { name: "MySQL", proficiency: 85 },
-      { name: "DuckDB", proficiency: 80 },
-      { name: "TensorFlow", proficiency: 78 },
-      { name: "Git", proficiency: 92 },
-      { name: "Linux/Unix", proficiency: 88 },
-      { name: "LATEX", proficiency: 85 },
-      { name: "Streamlit", proficiency: 82 }
+      { name: "MySQL ", proficiency: 85 },
+      { name: "DuckDB ", proficiency: 80 },
+      { name: "TensorFlow ", proficiency: 78 },
+      { name: "Git ", proficiency: 92 },
+      { name: "Linux/Unix ", proficiency: 88 },
+      { name: "LaTeX ", proficiency: 85 },
+      { name: "Streamlit ", proficiency: 82 }
     ]
   }
 ];
@@ -142,10 +148,22 @@ export const contactsData: ContactEntry[] = [
   { label: "Github", value: "https://github.com/vieee" }
 ];
 
-export const achievementsData: string[] = [
-  "Secured the RM&C Employee Excellence Award in Q2 2024 for streaming the Backtesting process and Model performance reporting in the CPG space at JPMorgan Chase & Co.",
-  "Secured 2nd Place in the Code for Good Hackathon organized by JPMorgan Chase & Co.",
-  "Secured 4th Place in the Specathon Hackathon organized by St. Peter's College, Hyderabad."
+export const achievementsData: AchievementEntry[] = [
+  {
+    title: "Secured Employee Excellence Award for streaming Backtesting & Model Reporting in CPG",
+    organization: "J.P. Morgan Chase & Co.",
+    date: "Q2 2024"
+  },
+  {
+    title: "Secured 2nd Place in the Code for Good Hackathon",
+    organization: "J.P. Morgan Chase & Co.",
+    date: "Jul 2022"
+  },
+  {
+    title: "Secured 4th Place in the Specathon Hackathon",
+    organization: "St. Peter's College, Hyderabad",
+    date: "Oct 2021"
+  }
 ];
 
 export const researchData: ResearchEntry[] = [
@@ -169,13 +187,13 @@ export const educationData: EducationEntry[] = [
     grade: "9.52/10"
   },
   {
-    degree: "HSC",
+    degree: "High School",
     institution: "Pace Junior Science College, Andheri",
     date: "2016 - 2018",
     grade: "92.62%"
   },
   {
-    degree: "SSC",
+    degree: "Senior Secondary",
     institution: "Fatima High School, Mumbai",
     date: "2004 - 2016",
     grade: "95.20%"

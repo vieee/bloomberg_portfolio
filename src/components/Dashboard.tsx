@@ -77,7 +77,7 @@ export default function Dashboard({ data }: DashboardProps) {
             {isMaximized ? '[-]' : '[+]'}
           </button>
         </div>
-        <div className="flex-1 overflow-auto p-2">
+        <div className="flex-1 overflow-auto p-2 flex flex-col">
           {children}
         </div>
       </div>
