@@ -2,25 +2,25 @@
 
 This document outlines the specialized Agent roles (subagents) and their workflows established for the continuous development of the Next.js Bloomberg Terminal Portfolio.
 
-## 1. Static Data Ingestion Agent
-**Role:** To parse native Markdown files from the `.gemini/resources` directory and structure them for the Next.js Server Components.
+## 1. Static Data Management Agent
+**Role:** To manage and update the centralized data layer powering the Next.js Server Components.
 **Responsibilities:**
-- Read user data (`EXPERIENCE.md`, `ACHIEVEMENTS.md`, etc.).
-- Utilize specific regex parsing scripts (`parser.ts`) to extract dates, tickers, metrics, and bullet points from flat markdown text.
-- Ensure the data ingestion logic is executed at build or request time on the server to preserve and maximize **SEO requirements**.
+- Maintain the user's data explicitly inside `src/data/portfolioData.ts`.
+- Ensure all entries strictly conform to their exported TypeScript interfaces (`ExperienceEntry`, `SkillEntry`, etc.) to prevent runtime parsing errors and enforce type-safety.
+- Keep the `portfolioData.ts` fully synchronized with the UI constraints; do not add nested object structures that the UI cannot currently render. 
 
 ## 2. Dynamic Grid Manager Agent
 **Role:** To manage the logic of the 2x2 Dashboard UI shell.
 **Responsibilities:**
-- Maintain the state logic for Quadrants Q1, Q2, Q3, and Q4.
+- Maintain the state logic for Quadrants Q1, Q2, Q3, and Q4 in `Dashboard.tsx`.
 - Handle component switching via the terminal-style dropdown headers `[ 1 : TERMINAL ▼ ]`.
 - **View Toggling:** Implement and manage the maximization `[+]` logic, allowing seamless transitions from the 4-panel dashboard to a **full-screen terminal-based view**.
 
 ## 3. Terminal Command Parser Agent
 **Role:** To build and maintain the interactive command-line interface logic inside the `TerminalPanel` component.
 **Responsibilities:**
-- Intercept user input gracefully, mapping string commands (`experience`, `contacts`) to the parsed data payload.
-- Log outputs into the terminal feed using text-based styling to mimic real CLI environments.
+- Intercept user input gracefully, mapping string commands (`experience`, `contacts`) to the strongly typed payload.
+- Log outputs into the terminal feed using text-based styling to mimic real CLI environments (e.g. `JSON.stringify` logic for objects).
 
 ## 4. Retrospective Formatting Agent (UI/UX)
 **Role:** To enforce the strict Bloomberg Terminal design constraints across all visual components.

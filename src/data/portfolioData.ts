@@ -1,3 +1,16 @@
+export interface ResearchEntry {
+  title: string;
+  conference: string;
+  link: string;
+}
+
+export interface EducationEntry {
+  degree: string;
+  institution: string;
+  date: string;
+  grade: string;
+}
+
 export interface ExperienceEntry {
   company: string;
   ticker: string;
@@ -7,9 +20,14 @@ export interface ExperienceEntry {
   bullets: string[];
 }
 
+export interface SkillItem {
+  name: string;
+  proficiency: number;
+}
+
 export interface SkillEntry {
   category: string;
-  skills: string[];
+  skills: SkillItem[];
 }
 
 export interface ContactEntry {
@@ -91,11 +109,29 @@ export const experienceData: ExperienceEntry[] = [
 export const skillsData: SkillEntry[] = [
   {
     category: "Languages & Frameworks",
-    skills: ["Python", "Pandas", "Polars", "NumPy", "C++", "C", "Bash", "React", "TypeScript"]
+    skills: [
+      { name: "Python", proficiency: 95 },
+      { name: "Pandas", proficiency: 92 },
+      { name: "Polars", proficiency: 85 },
+      { name: "NumPy", proficiency: 90 },
+      { name: "C++", proficiency: 82 },
+      { name: "C", proficiency: 75 },
+      { name: "Bash", proficiency: 80 },
+      { name: "React", proficiency: 85 },
+      { name: "TypeScript", proficiency: 88 }
+    ]
   },
   {
     category: "Data, Tools & Dev",
-    skills: ["MySQL", "DuckDB", "TensorFlow", "Git", "Linux/Unix", "LATEX", "Streamlit"]
+    skills: [
+      { name: "MySQL", proficiency: 85 },
+      { name: "DuckDB", proficiency: 80 },
+      { name: "TensorFlow", proficiency: 78 },
+      { name: "Git", proficiency: 92 },
+      { name: "Linux/Unix", proficiency: 88 },
+      { name: "LATEX", proficiency: 85 },
+      { name: "Streamlit", proficiency: 82 }
+    ]
   }
 ];
 
@@ -112,15 +148,38 @@ export const achievementsData: string[] = [
   "Secured 4th Place in the Specathon Hackathon organized by St. Peter's College, Hyderabad."
 ];
 
-export const researchData: string[] = [
-  "In-Browser Attendance System using Face Recognition, 12th ICCCNT (https://ieeexplore.ieee.org/document/9580042)",
-  "Server-less Edge Computing; Real-time Face, Fingerprint & Speech Recognition. Intelligent Framework for Crime Prediction, 4th ESCI (https://ieeexplore.ieee.org/document/9758281)"
+export const researchData: ResearchEntry[] = [
+  {
+    title: "In-Browser Attendance System using Face Recognition",
+    conference: "12th ICCCNT",
+    link: "https://ieeexplore.ieee.org/document/9580042"
+  },
+  {
+    title: "Server-less Edge Computing; Real-time Face, Fingerprint & Speech Recognition. Intelligent Framework for Crime Prediction",
+    conference: "4th ESCI",
+    link: "https://ieeexplore.ieee.org/document/9758281"
+  }
 ];
 
-export const educationData: string[] = [
-  "Bachelor of Technology, Information Technology | Sardar Patel Institute of Technology, Mumbai | 2018 - 2022 | Grade: 9.52/10",
-  "Pace Junior Science College, Andheri | 2016 - 2018 | Grade: 92.62%",
-  "Fatima High School, Mumbai | 2004 - 2016 | Grade: 95.20%%"
+export const educationData: EducationEntry[] = [
+  {
+    degree: "Bachelor of Technology, Information Technology",
+    institution: "Sardar Patel Institute of Technology, Mumbai",
+    date: "2018 - 2022",
+    grade: "9.52/10"
+  },
+  {
+    degree: "HSC",
+    institution: "Pace Junior Science College, Andheri",
+    date: "2016 - 2018",
+    grade: "92.62%"
+  },
+  {
+    degree: "SSC",
+    institution: "Fatima High School, Mumbai",
+    date: "2004 - 2016",
+    grade: "95.20%"
+  }
 ];
 
 export const portfolioData = {

@@ -1,11 +1,13 @@
 'use client';
 
 import React, { useState } from 'react';
-import TerminalPanel from './TerminalPanel';
-import ContentPanel from './ContentPanel';
+import TerminalPanel from './TerminalPanel'; // Trigger TS server sync
+import ContentPanel from './ContentPanel'; // Trigger TS server sync
 import ExperienceTable from './ExperienceTable';
+import EducationTable from './EducationTable';
 import SkillsChart from './SkillsChart';
 import NewsTicker from './NewsTicker';
+import ResearchTable from './ResearchTable';
 import ProfileCard from './ProfileCard';
 
 type GridState = {
@@ -86,14 +88,16 @@ export default function Dashboard({ data }: DashboardProps) {
       Content = <TerminalPanel data={data} />;
     } else if (currentModule === 'Experience') {
       Content = <ExperienceTable content={data.experience || ''} />;
+    } else if (currentModule === 'Education') {
+      Content = <EducationTable content={data.education || []} />;
     } else if (currentModule === 'Skills') {
       Content = <SkillsChart content={data.skills || ''} />;
     } else if (currentModule === 'Contacts') {
       Content = <ProfileCard content={data.contacts || ''} />;
     } else if (currentModule === 'Achievements') {
-      Content = <NewsTicker content={data.achievements || ''} type="ACHV" />;
+      Content = <NewsTicker content={data.achievements || []} type="ACHV" />;
     } else if (currentModule === 'Research') {
-      Content = <NewsTicker content={data.research || ''} type="RES" />;
+      Content = <ResearchTable content={data.research || []} />;
     } else {
       const dataKey = currentModule.toLowerCase();
       Content = <ContentPanel title={currentModule} content={data[dataKey] || 'No data found.'} />;
